@@ -28,14 +28,14 @@ header{text-align:center;padding:64px 24px 36px}
 .glimpse{width:100%;height:46px;margin-bottom:15px}
 .ctag{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.12em;padding:3px 10px;border-radius:99px}
 .card.houan .ctag{background:#f6e3df;color:var(--accent)}.card.zairyu .ctag{background:#e2eef7;color:var(--brand)}
-.card.tedori .ctag{background:#f6ecda;color:#9a6b1f}.card.kabe .ctag{background:#e2f1e9;color:#1f7a4d}
+.card.tools .ctag{background:#f6ecda;color:#9a6b1f}
 .card h2{font-weight:900;font-size:1.3rem;margin:9px 0 7px}
 .card p{font-size:.9rem;color:#52626d;flex:1}
 .cmeta{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .stat{font-size:.74rem;color:var(--muted)}
 .go{font-weight:700;font-size:.86rem;white-space:nowrap}
 .card.houan .go{color:var(--accent)}.card.zairyu .go{color:var(--brand)}
-.card.tedori .go{color:#9a6b1f}.card.kabe .go{color:#1f7a4d}
+.card.tools .go{color:#9a6b1f}
 footer{margin-top:auto;text-align:center;padding:24px;color:var(--muted);font-size:.74rem;border-top:1px solid var(--line)}
 footer a{color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:3px 12px;margin:0 3px;font-weight:600}
 footer a:hover{border-color:var(--brand);color:var(--brand)}
@@ -75,26 +75,18 @@ footer a:hover{border-color:var(--brand);color:var(--brand)}
     <p>日本に暮らす外国人の数を、都道府県・市区町村ごとの地図で。</p>
     <div class="cmeta"><span class="stat">都道府県・市区町村別</span><span class="go">開く →</span></div>
   </a>
-  <a class="card tedori" href="tools/tedori/">
+  <a class="card tools" href="tools/">
     <svg class="glimpse" viewBox="0 0 200 46" aria-hidden="true">
-      <rect x="12" y="9" width="120" height="15" rx="3" fill="#3d7ea6"/><rect x="135" y="9" width="29" height="15" rx="3" fill="#e8b45a"/>
-      <rect x="167" y="9" width="9" height="15" rx="3" fill="#d98e6b"/><rect x="179" y="9" width="9" height="15" rx="3" fill="#c9b8a3"/>
-      <text x="72" y="40" text-anchor="middle" font-size="8" fill="#3d7ea6">手取り</text>
-      <text x="149" y="40" text-anchor="middle" font-size="8" fill="#8a96a0">社会保険</text><text x="183" y="40" text-anchor="middle" font-size="8" fill="#8a96a0">税</text></svg>
-    <span class="ctag">税・社会保険</span>
-    <h2>手取りシミュレーター</h2>
-    <p>給料から何が引かれて、どこへ行くのか。所得税の使い道、保険料率の推移までひとつなぎで。</p>
-    <div class="cmeta"><span class="stat">2026年(令和8年)制度対応</span><span class="go">開く →</span></div>
-  </a>
-  <a class="card kabe" href="tools/kabe/">
-    <svg class="glimpse" viewBox="0 0 200 46" aria-hidden="true">
-      <line x1="118" y1="4" x2="118" y2="34" stroke="#b9821f" stroke-dasharray="3 3" stroke-width="1.5"/>
-      <polyline points="12,34 118,15 118,26 188,13" fill="none" stroke="#3d7ea6" stroke-width="2.5" stroke-linejoin="round"/>
-      <text x="118" y="44" text-anchor="middle" font-size="8" fill="#b9821f">130万円の壁</text></svg>
-    <span class="ctag">働き方</span>
-    <h2>年収の壁シミュレーター</h2>
-    <p>パート・アルバイトの106万・130万の壁を試算。手取りのカーブで「壁」が見える。</p>
-    <div class="cmeta"><span class="stat">2026年10月の制度変更に対応</span><span class="go">開く →</span></div>
+      <rect x="14" y="10" width="52" height="13" rx="3" fill="#3d7ea6"/><rect x="68" y="10" width="14" height="13" rx="3" fill="#e8b45a"/>
+      <rect x="84" y="10" width="8" height="13" rx="3" fill="#d98e6b"/>
+      <text x="53" y="40" text-anchor="middle" font-size="8" fill="#8a96a0">手取り</text>
+      <line x1="160" y1="5" x2="160" y2="27" stroke="#b9821f" stroke-dasharray="3 3" stroke-width="1.5"/>
+      <polyline points="118,27 160,14 160,22 188,12" fill="none" stroke="#3d7ea6" stroke-width="2.5" stroke-linejoin="round"/>
+      <text x="153" y="40" text-anchor="middle" font-size="8" fill="#8a96a0">年収の壁</text></svg>
+    <span class="ctag">くらし</span>
+    <h2>くらしと制度のツール</h2>
+    <p>給料・税金・社会保険のしくみを、自分の数字で確かめられるツール集。</p>
+    <div class="cmeta"><span class="stat">手取り／年収の壁 ほか順次追加</span><span class="go">開く →</span></div>
   </a>
 </main>
 </div>
