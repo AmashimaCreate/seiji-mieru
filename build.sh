@@ -24,4 +24,10 @@ cp -r zairyu-src/dist "$OUT/zairyu"
 rm -f "$OUT/zairyu/CNAME"   # GitHub Pages 用の名残（Cloudflareでは不要）
 rm -rf zairyu-src
 
-echo "✓ built: $OUT  ( / , /houan , /zairyu )"
+# --- /tools = くらしと制度のツール（手取り・年収の壁。Vite マルチページ、base は vite.config 側で /tools/ 指定済み） ---
+git clone --depth 1 https://github.com/AmashimaCreate/seiji-tools.git tools-src
+( cd tools-src && npm ci && npm run build )
+cp -r tools-src/dist "$OUT/tools"
+rm -rf tools-src
+
+echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools )"
