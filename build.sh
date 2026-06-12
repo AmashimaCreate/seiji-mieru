@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tottori(地方議会見える化)。
+# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tools(くらしと制度) ＋ /tottori(地方議会見える化)。
 # Cloudflare Pages 設定 →  Build command: bash build.sh   /   Build output directory: dist
 #
 # ※ APIキー・生成スクリプトは取り込まない。clone するのは公開リポジトリのみ（トークン不要）。
