@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ)。
+# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tottori(地方議会見える化)。
 # Cloudflare Pages 設定 →  Build command: bash build.sh   /   Build output directory: dist
 #
 # ※ APIキー・生成スクリプトは取り込まない。clone するのは公開リポジトリのみ（トークン不要）。
@@ -30,4 +30,10 @@ git clone --depth 1 https://github.com/AmashimaCreate/seiji-tools.git tools-src
 cp -r tools-src/dist "$OUT/tools"
 rm -rf tools-src
 
-echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools )"
+# --- /tottori = 地方議会見える化（docs 配信構成。公開物は docs/ のみ） ---
+git clone --depth 1 https://github.com/AmashimaCreate/tottori-mieru.git tottori-src
+mkdir -p "$OUT/tottori"
+cp -R tottori-src/docs/. "$OUT/tottori"
+rm -rf tottori-src
+
+echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools , /tottori )"
