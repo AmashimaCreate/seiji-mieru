@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tools(くらしと制度) ＋ /tottori(地方議会見える化)。
+# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tools(くらしと制度) ＋ /tottori(地方議会見える化) ＋ /boeki(貿易見える化)。
 # Cloudflare Pages 設定 →  Build command: bash build.sh   /   Build output directory: dist
 #
 # ※ APIキー・生成スクリプトは取り込まない。clone するのは公開リポジトリのみ（トークン不要）。
@@ -36,4 +36,14 @@ mkdir -p "$OUT/tottori"
 cp -R tottori-src/docs/. "$OUT/tottori"
 rm -rf tottori-src
 
-echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools , /tottori )"
+# --- /boeki = 貿易見える化（Vite を base=/boeki/ でビルド＋国別静的ページSSG） ---
+#   公開リポジトリ未作成の間はスキップ（clone失敗を許容）。作成後は自動で有効化される。
+if git clone --depth 1 https://github.com/AmashimaCreate/trade-map.git boeki-src; then
+  ( cd boeki-src && npm ci && npx vite build --base=/boeki/ && node scripts/gen_static.mjs )
+  cp -r boeki-src/dist "$OUT/boeki"
+  rm -rf boeki-src
+else
+  echo "⚠ trade-map 公開リポジトリ未作成 → /boeki はスキップ（リポジトリ作成後に有効化）"
+fi
+
+echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools , /tottori , /boeki )"
