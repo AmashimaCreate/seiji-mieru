@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tools(くらしと制度) ＋ /tottori(地方議会見える化) ＋ /boeki(貿易見える化)。
+# seiji-mieru.com の集約ビルド：ハブ(root) ＋ /houan(立法タイムライン) ＋ /zairyu(外国人マップ) ＋ /tools(くらしと制度) ＋ /tottori(地方議会見える化) ＋ /boeki(貿易見える化) ＋ /words(国会ワードカウント)。
 # Cloudflare Pages 設定 →  Build command: bash build.sh   /   Build output directory: dist
 #
 # ※ APIキー・生成スクリプトは取り込まない。clone するのは公開リポジトリのみ（トークン不要）。
@@ -46,4 +46,15 @@ else
   echo "⚠ trade-map 公開リポジトリ未作成 → /boeki はスキップ（リポジトリ作成後に有効化）"
 fi
 
-echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools , /tottori , /boeki )"
+# --- /words = 国会ワードカウント（静的・全パス相対なのでそのまま配置） ---
+#   公開リポジトリ未作成の間はスキップ（clone失敗を許容）。作成後は自動で有効化される。
+if git clone --depth 1 https://github.com/AmashimaCreate/kokkai-words.git words-src; then
+  mkdir -p "$OUT/words"
+  cp words-src/index.html words-src/style.css words-src/app.js words-src/favicon.svg words-src/data.json "$OUT/words"/
+  [ -f words-src/og-image.png ] && cp words-src/og-image.png "$OUT/words"/
+  rm -rf words-src
+else
+  echo "⚠ kokkai-words 公開リポジトリ未作成 → /words はスキップ（リポジトリ作成後に有効化）"
+fi
+
+echo "✓ built: $OUT  ( / , /houan , /zairyu , /tools , /tottori , /boeki , /words )"

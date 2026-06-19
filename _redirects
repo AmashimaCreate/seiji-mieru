@@ -5,3 +5,4 @@
 # よって現状リダイレクトは不要。将来テーマが個別URLを持ったらここに追加する。
 /tottori  /tottori/  301
 /boeki  /boeki/  301
+/words  /words/  301

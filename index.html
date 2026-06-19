@@ -30,6 +30,7 @@ header{text-align:center;padding:64px 24px 36px}
 .card.houan .ctag{background:#f6e3df;color:var(--accent)}.card.zairyu .ctag{background:#e2eef7;color:var(--brand)}
 .card.tools .ctag{background:#f6ecda;color:#9a6b1f}
 .card.tottori .ctag{background:#dff4ef;color:#0f766e}
+.card.words .ctag{background:#e9e4f1;color:#5b4a8a}
 .card h2{font-weight:900;font-size:1.3rem;margin:9px 0 7px}
 .card p{font-size:.9rem;color:#52626d;flex:1}
 .cmeta{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -38,6 +39,7 @@ header{text-align:center;padding:64px 24px 36px}
 .card.houan .go{color:var(--accent)}.card.zairyu .go{color:var(--brand)}
 .card.tools .go{color:#9a6b1f}
 .card.tottori .go{color:#0f766e}
+.card.words .go{color:#5b4a8a}
 footer{margin-top:auto;text-align:center;padding:24px;color:var(--muted);font-size:.74rem;border-top:1px solid var(--line)}
 footer a{color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:3px 12px;margin:0 3px;font-weight:600}
 footer a:hover{border-color:var(--brand);color:var(--brand)}
@@ -102,6 +104,18 @@ footer a:hover{border-color:var(--brand);color:var(--brand)}
     <h2>地方議会 見える化</h2>
     <p>都道府県議会・政令市・特別区の議員名簿や地域データを見やすく整理。</p>
     <div class="cmeta"><span class="stat">全国対応を順次拡大中</span><span class="go">開く →</span></div>
+  </a>
+  <a class="card words" href="words/">
+    <svg class="glimpse" viewBox="0 0 200 46" aria-hidden="true">
+      <line x1="12" y1="40" x2="188" y2="40" stroke="#dde6ee" stroke-width="1.5"/>
+      <polyline points="14,31 44,27 74,33 104,17 134,23 164,9 188,15" fill="none" stroke="#5b4a8a" stroke-width="2" stroke-linejoin="round"/>
+      <polyline points="14,38 44,34 74,30 104,33 134,24 164,28 188,21" fill="none" stroke="#3a6ea5" stroke-width="2" stroke-linejoin="round"/>
+      <polyline points="14,36 44,37 74,33 104,31 134,33 164,27 188,30" fill="none" stroke="#1f7a4d" stroke-width="1.8" stroke-linejoin="round"/>
+      <circle cx="104" cy="17" r="2.6" fill="#5b4a8a"/><circle cx="164" cy="9" r="2.6" fill="#5b4a8a"/></svg>
+    <span class="ctag">国会のことば</span>
+    <h2>国会ワードカウント</h2>
+    <p>国会で話された言葉の件数を、語ごとに年単位の推移で。出典は国会会議録。</p>
+    <div class="cmeta"><span class="stat">物価・年金・防衛 ほか8語／2000年〜</span><span class="go">開く →</span></div>
   </a>
 </main>
 </div>
