@@ -9,7 +9,7 @@ OUT="dist"
 rm -rf "$OUT"; mkdir -p "$OUT"
 
 # --- ハブ（ルート） ---
-cp index.html favicon.svg "$OUT"/
+cp index.html favicon.svg og-image.jpg apple-touch-icon.png "$OUT"/
 [ -f _redirects ] && cp _redirects "$OUT"/_redirects
 
 # --- /houan = 立法タイムライン（静的・全パス相対なのでそのまま配置） ---
