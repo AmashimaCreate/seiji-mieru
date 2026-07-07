@@ -11,6 +11,8 @@ rm -rf "$OUT"; mkdir -p "$OUT"
 # --- ハブ（ルート） ---
 cp index.html favicon.svg og-image.jpg apple-touch-icon.png "$OUT"/
 [ -f _redirects ] && cp _redirects "$OUT"/_redirects
+# robots.txt はドメインルートに置く（クローラーは seiji-mieru.com/robots.txt を見る）。houan の sitemap を参照。
+[ -f robots.txt ] && cp robots.txt "$OUT"/robots.txt
 
 # --- /houan = 立法タイムライン（静的・全パス相対なのでそのまま配置） ---
 git clone --depth 1 https://github.com/AmashimaCreate/legislative_timeline.git "$OUT/houan"

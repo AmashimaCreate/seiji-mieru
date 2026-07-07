@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seiji-mieru.com/houan/sitemap.xml
