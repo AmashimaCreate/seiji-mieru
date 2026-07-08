@@ -13,10 +13,15 @@ cp index.html favicon.svg og-image.jpg apple-touch-icon.png "$OUT"/
 [ -f _redirects ] && cp _redirects "$OUT"/_redirects
 # robots.txt はドメインルートに置く（クローラーは seiji-mieru.com/robots.txt を見る）。houan の sitemap を参照。
 [ -f robots.txt ] && cp robots.txt "$OUT"/robots.txt
+# 404.html をルートに配置＝Cloudflare Pages は未一致パスにこれを 404 で返す（ソフト404＝存在しないURLが
+# 200でSPAシェルを返す挙動の是正。noindex 付き）。後段で /houan 配下にも同じものを置く。
+[ -f 404.html ] && cp 404.html "$OUT"/404.html
 
 # --- /houan = 立法タイムライン（静的・全パス相対なのでそのまま配置） ---
 git clone --depth 1 https://github.com/AmashimaCreate/legislative_timeline.git "$OUT/houan"
 rm -rf "$OUT/houan/.git" "$OUT/houan/README.md" "$OUT/houan/.gitignore"
+# /houan 配下の未一致パス（存在しない bill/{id}/ 等）にも 404 を返す（ディレクトリ階層ごとに 404.html を置く）。
+[ -f 404.html ] && cp 404.html "$OUT/houan/404.html"
 
 # --- /zairyu = 外国人マップ（Vite を base=/zairyu/ でビルド） ---
 #   ↓ 実際のビルド手順は foreign-resident-map の package.json / vite.config を確認して確定する（②）。
